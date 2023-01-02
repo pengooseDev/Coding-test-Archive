@@ -71,6 +71,8 @@ ex) git checkout -b myID
 
 ### 6. 추가한 코드 add, commit
 
+![image_from_ios](https://user-images.githubusercontent.com/73521518/210260968-be19fff3-8e16-4865-ba6d-352f1f7455ad.jpg)
+
 > 코드 추가를 완료한 후, 로컬 저장소에 변경된 부분을 반영하기 위해 add, commit 명령을 사용합니다.
 
 ```
