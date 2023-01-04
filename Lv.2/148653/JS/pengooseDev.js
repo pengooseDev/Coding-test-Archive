@@ -14,7 +14,6 @@ function solution(storey) {
         number = storey + 10 ** (index + 1);
         arr = Array.from(String(number), (i) => Number(i));
       }
-
       index++;
       continue;
     }
