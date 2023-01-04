@@ -1,10 +1,7 @@
 function solution(babbling) {
   const soundables = ['aya', 'ye', 'woo', 'ma'];
   const res = babbling.map((word) => {
-    for (let j of soundables) {
-      const wordIndex = word.indexOf(j);
-      word = word.replace(j, '1');
-    }
+    for (let i of soundables) word = word.replace(i, '1');
     return word;
   });
 
