@@ -4,7 +4,6 @@ function solution(my_str, n) {
     const myStr = my_str.slice(n * i, n * i + n);
     answer.push(myStr);
   }
-  console.log(answer);
 
   return answer;
 }
