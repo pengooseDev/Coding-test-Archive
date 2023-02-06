@@ -1,6 +1,12 @@
 # 프로그래머스 코드 솔루션 아카이브
 
 
+# 백준 허브를 사용하는 경우
+1. git 권한 요구
+2. [백준허브 설치](https://chrome.google.com/webstore/detail/%EB%B0%B1%EC%A4%80%ED%97%88%EB%B8%8Cbaekjoonhub/ccammcjdkpgjmcpijpahlehmapgmphmk?hl=en&authuser=0)
+
+# PR을 날리는 경우
+
 ## Commit convention
 
 > "feat: {문제 번호} {언어} 풀이 추가"
