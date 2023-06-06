@@ -1,43 +1,21 @@
 #include <stdio.h>
+#include <vector>
 #include <algorithm>
 using namespace std;
-
-struct position
-{
-  int x;
-  int y;
-};
-
-bool sorting(const position &p1, const position &p2)
-{
-  if (p1.x > p2.x)
-    return false;
-  if (p1.x < p2.x)
-    return true;
-
-  return p1.y > p2.y ? false : true;
-}
 
 main()
 {
   int n;
   scanf("%d", &n);
-  position positions[100000];
+  vector<pair<int, int>> v(n);
 
   for (int i = 0; i < n; i++)
-  {
-    int x, y;
-    scanf("%d %d", &x, &y);
-    positions[i].x = x;
-    positions[i].y = y;
-  }
+    scanf("%d %d", &v[i].first, &v[i].second);
 
-  sort(positions, positions + n, sorting);
+  sort(v.begin(), v.end());
 
-  for (int i = 0; i < n; i++)
-  {
-    printf("%d %d\n", positions[i].x, positions[i].y);
-  }
+  for (auto [x, y] : v)
+    printf("%d %d\n", x, y);
 
   return 0;
 }
