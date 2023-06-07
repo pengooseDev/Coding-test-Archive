@@ -14,13 +14,9 @@ int main()
   for (int i = 0; i < T_length; i++)
   {
     if (!s.empty() && s.top() == '(' && T[i] == ')')
-    {
-      s.pop();
-    }
+        s.pop();
     else
-    {
       s.emplace(T[i]);
-    }
   }
 
   printf("%d", s.size());
