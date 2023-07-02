@@ -1,3 +1,0 @@
-## 배열의 유사도
-
-### [> Link](https://school.programmers.co.kr/learn/courses/30/lessons/120903)
