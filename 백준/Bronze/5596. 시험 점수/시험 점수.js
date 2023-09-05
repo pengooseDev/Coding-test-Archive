@@ -1,0 +1,1 @@
+console.log(Math.max(...require("fs").readFileSync("/dev/stdin").toString().trim().split('\n').map((v) => v.split(' ').map(Number).reduce((a,b)=>a+b))))
