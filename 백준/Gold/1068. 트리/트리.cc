@@ -2,66 +2,60 @@
 #include <vector>
 using namespace std;
 
-void leaf_checker(vector<bool> &v, vector<vector<int>> &g, int node)
+void check(vector<bool> &visited, vector<vector<int>> &graph, int node)
 {
-  v[node] = true;
-  for (int i : g[node])
-    leaf_checker(v, g, i);
+  visited[node] = true;
+  for (int i : graph[node]) check(visited, graph, i);
 }
 
-int dfs(vector<bool> &v, vector<vector<int>> &g, int node)
+int dfs(vector<bool> &visited, vector<vector<int>> &graph, int node)
 {
-  if (v[node])
-    return 0;
+  if (visited[node]) return 0;
 
-  int child = 0;
+  int children = 0;
   int leafs = 0;
 
-  for (int i : g[node])
+  for (int i : graph[node])
   {
-    child++;
-    leafs += dfs(v, g, i);
+    children++;
+    leafs += dfs(visited, graph, i);
   }
 
-  if (child == 1 && v[g[node][0]])
+  if (children == 1 && visited[graph[node][0]])
     return 1;
 
-  return leafs > 0 ? leafs : (child == 0 ? 1 : 0);
+  return leafs > 0 ? leafs : (children == 0 ? 1 : 0);
 }
 
 int main()
 {
+  int r = -1;
   int n;
   cin >> n;
   vector<vector<int>> graph(n);
   vector<bool> visited(n, false);
 
-  int root = -1;
   for (int i = 0; i < n; i++)
   {
     int parent;
     cin >> parent;
 
-    if (parent == -1)
-      root = i;
-    else
-      graph[parent].push_back(i);
+    if (parent == -1) r = i;
+    else graph[parent].push_back(i);
   }
 
   int target, answer;
   cin >> target;
   visited[target] = true;
 
-  if (target == root)
+  if (target == r)
   {
     cout << 0 << endl;
-
     return 0;
   }
 
-  leaf_checker(visited, graph, target);
-  answer = dfs(visited, graph, root);
-
+  check(visited, graph, target);
+  answer = dfs(visited, graph, r);
   cout << answer << endl;
 
   return 0;
